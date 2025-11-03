@@ -1,2 +1,3 @@
-# democratic-resilience
-The Sources of Democratic Resilience in an Age of Backsliding
+# The Sources of Democratic Resilience in an Age of Backsliding
+
+This project assesses the degree of global democratic decline in recent decades and explores why democracy has persisted in so many countries despite the rise of populist forces and an increasingly hostile international environment. Certainly, democracy is under threat.  Several important countries -- including Hungary, Venezuela, and the United States -- have experienced backsliding. Yet, an overwhelming majority of Third Wave democracies – those that transitioned from autocracy between 1975 and 2000 – have persevered. There are now more democracies in the world than at almost any time in history. Drawing on different original datasets, statistical analyses, and detailed case studies, the project expects to show that such resilience is grounded in two factors: economic development and authoritarian weakness.
