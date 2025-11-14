@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democratic Erosion Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: #f8f9fa;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #7f8c8d;
+        }
+
+        .team-member h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .role {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .paper {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .paper h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper .authors {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper .venue {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-placeholder {
+            background: #ecf0f1;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px dashed #bdc3c7;
+        }
+
+        .dashboard-placeholder p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Democratic Erosion Tracker</div>
+            <ul class="nav-links">
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
+                <li><a href="#team" onclick="showSection('team')">Team</a></li>
+                <li><a href="#research" onclick="showSection('research')">Research</a></li>
+                <li><a href="#dashboard" onclick="showSection('dashboard')">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about" class="active">
+            <h1>About the Project</h1>
+            <p>
+                Funded by the SSHRC, Canada, This project assesses the degree of global democratic decline in recent decades and explores why democracy has persisted in 
+              so many countries despite the rise of populist forces and an increasingly hostile international environment. Drawing on different original datasets, statistical analyses, 
+              and detailed case studies, the project expects to show that such resilience is grounded in two factors: economic development and authoritarian weakness.
+            </p>
+        </section>
+
+        <section id="team">
+            <h1>Our Team</h1>
+            <div class="team-grid">
+                <div class="team-member">
+                        <img src="https://vailsymposium.org/wp-content/uploads/2022/09/BANNERlucan-way-social.jpeg" alt="Prof. Lucan Way" class="team-photo">
+                        <h3>Prof. Lucan Way</h3>
+                        <div class="role">Principal Investigator</div>
+                    <p>Lucan Ahmad Way received his BA from Harvard College and his PhD from the University of California, Berkeley. Way’s research focuses on global patterns of democracy and dictatorship.  His most recent book (with Steven Levitsky), Revolution and Dictatorship: The Violent Origins of Durable Authoritarianism (Princeton University Press) provides a comparative historical explanation for the extraordinary durability of autocracies (China, Cuba, USSR) born of violent social revolution. Way’s solo-authored book, Pluralism by Default: Weak Autocrats and the Rise of Competitive Politics (Johns Hopkins, 2015), examines the sources of political competition in the former Soviet Union.  Way argues that pluralism in the developing world often emerges out of authoritarian weakness: governments are too fragmented and states too weak to monopolize political control.  His first book, Competitive Authoritarianism: Hybrid Regimes after the Cold War (with Steven Levitsky), was published in 2010 by Cambridge University Press. Way’s work on competitive authoritarianism has been cited thousands of times and helped stimulate new and wide-ranging research into the dynamics of hybrid democratic-authoritarian rule. Way also has published articles in the American Journal of Political Science, Comparative Politics, Journal of Democracy, Perspectives on Politics, Politics & Society, Slavic Review, Studies in Comparative and International Development, World Politics, as well as in a number of area studies journals and edited volumes. His 2005 article in World Politics was awarded the Best Article Award in the “Comparative Democratization” section of the American Political Science Association in 2006. He is Co-Director of the Petro Jacyk Program for the Study of Ukraine and is Co-Chair of the Editorial Board of The Journal of Democracy. He has held fellowships at Harvard University (Harvard Academy and Davis Center for Russian and Eurasian Studies), and the University of Notre Dame (Kellogg Fellowship).
+                    </p>
+                </div>
+                <div class="team-member">
+                        <img src="https://hir.harvard.edu/content/images/2025/01/Steve-Levitsky-solo-photo-2_credit-Stephanie-Mitchell-2.jpg" alt="Prof. Steve Levitsky" class="team-photo">
+                        <h3>Prof. Steve Levitsky</h3>
+                        <div class="role">Co-investigator</div>
+                    <p>Steven Levitsky is David Rockefeller Professor of Latin American Studies and Professor of Government and Director of the David Rockefeller Center for Latin American Studies at Harvard. He is Senior Fellow at the Kettering Foundation and a Senior Democracy Fellow at the Council on Foreign Relations. His research focuses on democratization and authoritarianism, political parties, and weak and informal institutions, with a focus on Latin America. He is co-author (with Daniel Ziblatt) of How Democracies Die, which was a New York Times Best-Seller and was published in 30 languages, and Tyranny of the Minority: Why American Democracy Reached the Breaking Point. He has written or edited 11 other books, including Transforming Labor-Based Parties in Latin America: Argentine Peronism in Comparative Perspective (Cambridge University Press 2003), Competitive Authoritarianism: Hybrid Regimes after the Cold War (with Lucan Way) (Cambridge University Press, 2010), and Revolution and Dictatorship: The Violent Origins of Durable Authoritarianism (with Lucan Way) (Princeton University Press, 2022). He and Lucan Way are currently working on a book on democratic resilience across the world. Professor Levitsky has written for New York Times, The Washington Post, The Atlantic, Foreign Affairs, and The New Republic, and he has been a columnist for La Republica (Peru) and Folha de São Paulo (Brazil).
+                    </p>
+                </div>
+                <div class="team-member">
+                        <img src="https://semuhi.github.io/assets/img/prof_pic.jpg" alt="Dr. Semuhi Sinanoglu" class="team-photo">
+                        <h3>Dr. Semuhi Sinanoglu</h3>
+                        <div class="role">Team Lead</div>
+                    <p>Semuhi is based at the German Institute of Development and Sustainability (IDOS). He completed his PhD in Political Science at the University of Toronto. He's a German Marshall Fund Marshall Memorial Fellow (MMF) (2025). He studies how dictators drive support for their regime with propaganda, repression, and polarization, and which counter-mobilization and international assistance strategies can help mitigate their effectiveness. His dissertation research is about how and why autocrats financially coerce their closest business allies during sovereign debt crises. He also contributes to the computational and experimental methodological tools in political science research. His papers are published in leading journals in our discipline, such as Journal of Democracy, Sociological Methods & Research, Government & Opposition, and Comparative Politics. Previously, he was the co‑founder of a Toronto‑based political risk consultancy company, which leverages proprietary algorithms to forecast protests and elections. During his doctoral studies, he was a graduate associate at POSTCOR Lab, a Trudeau Centre Fellow at the Munk School, and a Regional Manager at Digital Society Project.</p>
+                </div>
+                <div class="team-member">
+                        <img src="https://images.squarespace-cdn.com/content/v1/6705d22dbc79ef04049b641c/5b8a23cf-f7d6-4ba0-bf5d-29d7477cba55/Yashar.jpg" alt="Yashar Talebirad" class="team-photo">
+                        <h3>Yashar Talebirad</h3>
+                        <div class="role">Research Assistant</div>
+                    <p>Yashar Talebirad is a software engineer passionate about complex systems and interdisciplinary projects at the intersection of artificial intelligence, computational social science, and human development. His work focuses on developing novel computational frameworks to understand collective intelligence and emergent behaviors in both human and artificial systems, from analyzing democratic resilience to building AI tools for individual empowerment. His research aims to reveal hidden patterns in social phenomena and unlock new possibilities for enhancing both individual and collective human potential.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h1>Research Publications</h1>
+            <div class="paper">
+                 <h3><a href="https://www.journalofdemocracy.org/articles/can-capitalism-save-democracy/" target="_blank" style="color: #2c3e50; text-decoration: none;">Can Capitalism Save Democracy?</a></h3>
+                <div class="authors">Semuhi Sinanoglu, Lucan Way, and Steve Levitsky.</div>
+                <div class="venue">Journal of Democracy, 2025, 36(3): 5-15.</div>
+                <p>
+                    While capitalism today is widely seen as a threat to democracy, the free market plays a central role in fostering pluralism. A strong and autonomous private sector is critical to the creation of a robust opposition and an independent civil society that are central to democratic resilience. At the same time, even rich and powerful private sectors in high-income countries may be vulnerable to government pressure with regulatory coercion — a fact that makes these countries potentially susceptible to democratic backsliding. Indeed, state capture of business — to a greater degree than business capture of the state — represents the most direct threat to democratic survival.
+                </p>
+            </div>
+
+              <div class="paper">
+                 <h3><a href="https://www.researchgate.net/publication/393329308_Resource_Concentration_and_Autocratic_Resilience" target="_blank" style="color: #2c3e50; text-decoration: none;">Resource Concentration and Autocratic Resilience</a></h3>
+                <div class="authors">Semuhi Sinanoglu, Lucan Way, and Steve Levitsky.</div>
+                <div class="venue">Working paper.</div>
+                <p>
+How does resource concentration impact regime survival? On the one hand, the concentration of resources in government hands may allow dictators to weaken independent economic actors, bind large numbers to the state through the provision of attractive public employment, and facilitate efforts to impoverish, coopt, or divide organized opposition. On the other hand, high-level state involvement in the economy may render autocrats liable for a country’s economic woes and aggravate the economic loss of the incumbent elite during economic downturns, leading to higher rates of defection. To test these ideas, we created an original index of resource concentration that includes a variety of measures for the relative size of the government/private sector, state’s coercive control over the economy, and poverty and underdevelopment with a country-year-level dataset from 1970-2023. We show that higher levels of statist resource concentration significantly boost regime survival, controlled for the level of institutionalization. The findings have significant implications for understanding structural/political economy factors behind regime durability.
+                </p>
+            </div>
+
+              <div class="paper">
+                 <h3>Tracking Democratic Erosion Transparently and Reproducibly: An Event-Level Dataset</h3>
+                <div class="authors">Yashar Talebirad, Semuhi Sinanoglu, Lucan Way, and Steve Levitsky.</div>
+                <div class="venue">Working paper.</div>
+            </div>
+          
+        </section>
+
+  <section id="dashboard">
+            <h1>Democratic Erosion Tracker</h1>
+            <p style="margin-bottom: 2rem;">
+                Explore our interactive dashboard featuring event data extracted from human rights reports. 
+                Click on countries to view detailed timelines and event descriptions.
+            </p>
+            <iframe 
+                src="https://semuhi.shinyapps.io/democratic_erosion_tracker" 
+                style="width: 100%; height: 800px; border: 2px solid #ddd; border-radius: 8px;"
+                title="Democratic Erosion Tracker Dashboard">
+            </iframe>
+        </section>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Show about section on load
+        window.addEventListener('load', () => {
+            showSection('about');
+        });
+    </script>
+</body>
+</html>
