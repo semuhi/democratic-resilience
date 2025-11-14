@@ -115,17 +115,14 @@
         }
 
         .team-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #ddd;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #7f8c8d;
-        }
+    width: 150px;
+    height: 150px;
+    border-radius: 8px; /* Rounded corners instead of circle */
+    object-fit: cover;
+    object-position: center top; /* Focus on upper part (faces) */
+    margin: 0 auto 1rem;
+    display: block;
+}
 
         .team-member h3 {
             color: #2c3e50;
